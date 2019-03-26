@@ -2,6 +2,7 @@ package com.rhanjie.me.opengltest
 
 import android.content.Context
 import android.opengl.GLSurfaceView
+import com.rhanjie.me.opengltest.drawable.MyGLRenderer
 
 class MyGLSurfaceView(context: Context): GLSurfaceView(context) {
     private val renderer: MyGLRenderer
