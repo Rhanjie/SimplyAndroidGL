@@ -19,6 +19,9 @@ class MyGLRenderer : GLSurfaceView.Renderer {
     private val viewMatrix = FloatArray(16)
     private val rotationMatrix = FloatArray(16)
 
+    @Volatile
+    var angle = 0f
+
     override fun onSurfaceCreated(gl: GL10?, config: EGLConfig?) {
         GLES31.glClearColor(0.2f, 0.5f, 1.0f, 1.0f)
 
@@ -38,8 +41,8 @@ class MyGLRenderer : GLSurfaceView.Renderer {
 
         val scratch = FloatArray(16)
 
-        val time = SystemClock.uptimeMillis() % 4000L
-        val angle = 0.090f * time.toInt()
+        //val time = SystemClock.uptimeMillis() % 4000L
+        //val angle = 0.090f * time.toInt()
         Matrix.setRotateM(rotationMatrix, 0, angle, 0f, 0f, -1f)
 
         Matrix.setLookAtM(viewMatrix, 0, 0f, 0f, -3f, 0f, 0f, 0f, 0f, 1f, 0f)
